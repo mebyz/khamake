@@ -185,12 +185,12 @@ export class AssetConverter {
 						case '.wav': {
 							let exportInfo = AssetConverter.createExportInfo(fileinfo, false, options, self.exporter.options.from);
 							let sounds: { files: string[], sizes: number[] };
-							if (options.noprocessing) {
+							//if (options.noprocessing) {
 								sounds = await self.exporter.copyBlob(self.platform, file, exportInfo.destination, options);
-							}
+							/*}
 							else {
 								sounds = await self.exporter.copySound(self.platform, file, exportInfo.destination, options);
-							}
+							}*/
 							if (sounds.files.length === 0) {
 								throw 'Audio file ' + file + ' could not be exported, you have to specify a path to ffmpeg.';
 							}
